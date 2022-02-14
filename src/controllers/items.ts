@@ -1,5 +1,5 @@
 import { response } from 'express';
-import { searchItems } from '../models/items'
+import { searchItems,getItemDetails } from '../models/items'
 
 const itemList = async (req, res) => {
     const response = await searchItems(req.query.q);
@@ -7,8 +7,10 @@ const itemList = async (req, res) => {
     res.send(response)
 };
 
-const itemDetails = (req, res) => {
-    res.send('Details not implemented yet')
+const itemDetails = async (req, res) => {
+    const response = await getItemDetails(req.params.id)
+    
+    res.send(response)
 };
 
 export { itemList, itemDetails }
