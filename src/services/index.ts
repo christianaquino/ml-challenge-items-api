@@ -1,17 +1,15 @@
-import axios from 'axios'
+import axios from 'axios';
 
-export const search = async (searchText: string) => {
-    return await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${searchText}`)
-}
+export const search = (searchText: string) => axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${searchText}`);
 
-export const details = async (id: string) => {
-    const url = `https://api.mercadolibre.com/items/${id}`;
-    
-    return await axios.get(url)
-}
+export const details = (id: string) => {
+  const url = `https://api.mercadolibre.com/items/${id}`;
 
-export const description = async (id: string) => {
-    const url = `https://api.mercadolibre.com/items/${id}/description`;
-    
-    return await axios.get(url)
-}
+  return axios.get(url);
+};
+
+export const description = (id: string) => {
+  const url = `https://api.mercadolibre.com/items/${id}/description`;
+
+  return axios.get(url);
+};

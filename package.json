@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/index.js",
-    "dev": "tsc -w & nodemon dist/index.js"
+    "dev": "tsc -w & nodemon dist/index.js",
+    "lint": "eslint --ext .ts ./src",
+    "lint:fix": "eslint --cache  --ext .ts ./src --fix"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,12 @@
   "homepage": "https://github.com/christianaquino/ml-challenge-items-api#readme",
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
     "typescript": "^4.5.5"
   },
   "dependencies": {
