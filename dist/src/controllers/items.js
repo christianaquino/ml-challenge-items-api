@@ -12,11 +12,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.itemDetails = exports.itemList = void 0;
 const items_1 = require("../models/items");
 const itemList = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const response = yield (0, items_1.searchItems)('coso');
+    const response = yield (0, items_1.searchItems)(req.query.q);
     res.send(response);
 });
 exports.itemList = itemList;
 const itemDetails = (req, res) => {
-    res.send('El detalle');
+    res.send('Details not implemented yet');
 };
 exports.itemDetails = itemDetails;
